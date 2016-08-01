@@ -25,7 +25,7 @@ def players():
 
     # 'status' is supported by all Minecraft servers that are version 1.7 or higher.
     print "status",server.status()
-    data["status.latency"] = status.latency
+    data["status.latency.ms"] = status.latency
     data["currently_online"] = status.players.online
 
     print("The server has {0} players and replied in {1} ms".format(status.players.online, status.latency))
@@ -39,7 +39,7 @@ def players():
         # It is included in a 'status' call, but is exposed separate if you do not require the additional info.
     
     latency = server.ping()
-    data["server.latency"] = str(latency)
+    data["server.latency.ms"] = str(latency)
     print("The server replied in {0} ms".format(latency))
 
     # 'query' has to be enabled in a servers' server.properties file.
