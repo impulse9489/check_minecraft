@@ -86,7 +86,7 @@ class PingResponse:
         def __init__(self, raw):
             if type(raw) is not dict:
                 raise ValueError("Invalid players object (expected dict, found %s" % type(raw))
-
+            self.stu = raw
             if "online" not in raw:
                 raise ValueError("Invalid players object (no 'online' value)")
             if type(raw["online"]) is not int:
